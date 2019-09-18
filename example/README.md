@@ -1,4 +1,11 @@
-# Gatsby Theme Minimal Example
+# Gatsby Theme - Auth0
+
+TODOS:
+
+- [ ] Update this readme
+- [ ] Update .env.example and warning to include callback url
+- [ ] Fix types
+- [ ] Add tests
 
 A usage of
 [gatsby-theme-auth0](https://github.com/ChristopherBiscardi/gatsby-theme-auth0)
