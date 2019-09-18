@@ -4,8 +4,17 @@
   </a>
 </p>
 <h1 align="center">
-  Starter for creating a Gatsby Theme workspace
+  Gatsby Theme - Auth0
 </h1>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/86f1f840-1a9c-4994-be3e-6c9341cf6d9a/deploy-status)](https://app.netlify.com/sites/gatsby-theme-auth0-example/deploys)
+
+TODOS:
+
+- [ ] Update .env.example and warning to include callback url
+- [ ] Fix types
+- [ ] Add tests
+- [ ] Update this readme (everything below this line)
 
 ```shell
 gatsby new my-theme https://github.com/gatsbyjs/gatsby-starter-theme-workspace

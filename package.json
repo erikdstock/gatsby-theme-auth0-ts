@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn workspace example develop",
+    "serve": "yarn workspace example serve",
     "build": "yarn workspace example build",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
