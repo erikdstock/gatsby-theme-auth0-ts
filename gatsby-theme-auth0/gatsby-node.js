@@ -2,14 +2,14 @@ exports.onPreBootstrap = ({ reporter }) => {
   if (
     !process.env.GATSBY_AUTH0_DOMAIN ||
     !process.env.GATSBY_AUTH0_CLIENTID ||
-    !process.env.GATSBY_AUTH0_CALLBACK
+    !process.env.GATSBY_APP_URL
   ) {
     reporter.panicOnBuild(`
         Please define the following environment variables:
         
         GATSBY_AUTH0_DOMAIN
         GATSBY_AUTH0_CLIENTID
-        GATSBY_AUTH0_CALLBACK
+        GATSBY_APP_URL
 
         They are mandatory for the auth0-js client to work.
         

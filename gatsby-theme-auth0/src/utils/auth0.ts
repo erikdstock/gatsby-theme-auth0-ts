@@ -13,7 +13,7 @@ const auth: WebAuth = isBrowser
   ? new auth0.WebAuth({
       domain: process.env.GATSBY_AUTH0_DOMAIN as string,
       clientID: process.env.GATSBY_AUTH0_CLIENTID as string,
-      redirectUri: process.env.GATSBY_AUTH0_CALLBACK as string,
+      redirectUri: (process.env.GATSBY_APP_URL as string) + "/callback",
       responseType: "token id_token",
       scope: "openid profile email",
     })
@@ -117,7 +117,7 @@ export const login = (...args: any[]) => {
  */
 export const logout = () => {
   setAuthenticated(false)
-  auth.logout({})
+  auth.logout({ returnTo: process.env.GATSBY_APP_URL as string })
 }
 
 const userFromAuthResult = (authResult: Auth0DecodedHash): User => {
