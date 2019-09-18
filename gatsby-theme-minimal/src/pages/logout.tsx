@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { navigate } from "gatsby"
-import { AuthenticationContext } from "../Components/Authentication"
+import { AuthenticationContext } from "../components"
 
 const Logout = () => {
   const { logout } = useContext(AuthenticationContext)

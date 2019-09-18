@@ -5,9 +5,9 @@ import { AuthenticationContext } from "./AuthenticationProvider"
 
 const debug = true
 
-// export type AuthenticatedRouteComponent = React.ComponentType<
-//   AuthenticatedProps & RouteComponentProps
-// >
+export type AuthenticatedRouteComponent = React.ComponentType<
+  AuthenticatedProps & RouteComponentProps
+>
 
 export interface AuthenticatedProps {
   user: LoggedInUser

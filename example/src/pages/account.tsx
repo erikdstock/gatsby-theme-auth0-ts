@@ -1,18 +1,18 @@
-import React from "react"
-import { Router } from "@reach/router"
-import { Link } from "gatsby"
-import { logout } from "../utils/auth"
+import React from "react";
+import { Router } from "@reach/router";
+import { Link } from "gatsby";
 import {
   AuthenticatedRouteComponent,
-  PrivateRoute,
-} from "../Components/Authentication"
+  logout,
+  PrivateRoute
+} from "gatsby-theme-minimal";
 
 const Home: AuthenticatedRouteComponent = ({ user }) => {
-  return <p>Hi, {user.profile.nickname ? user.profile.nickname : "friend"}!</p>
-}
+  return <p>Hi, {user.profile.nickname ? user.profile.nickname : "friend"}!</p>;
+};
 
-const Settings: AuthenticatedRouteComponent = () => <p>Settings</p>
-const Billing: AuthenticatedRouteComponent = () => <p>Billing</p>
+const Settings: AuthenticatedRouteComponent = () => <p>Settings</p>;
+const Billing: AuthenticatedRouteComponent = () => <p>Billing</p>;
 
 const Account = () => {
   return (
@@ -24,8 +24,8 @@ const Account = () => {
         <a
           href="#logout"
           onClick={e => {
-            logout()
-            e.preventDefault()
+            logout();
+            e.preventDefault();
           }}
         >
           Log Out
@@ -37,6 +37,6 @@ const Account = () => {
         <PrivateRoute component={Billing} path="/account/billing" />
       </Router>
     </>
-  )
-}
-export default Account
+  );
+};
+export default Account;

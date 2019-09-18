@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
-import { handleAuthCallback } from "../utils/auth"
-import { AuthenticationContext } from "../Components/Authentication"
+import { handleAuthCallback } from "../utils/auth0"
+import { AuthenticationContext } from "../components"
 
 const Callback = () => {
   const { setUser } = useContext(AuthenticationContext)
