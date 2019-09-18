@@ -12,7 +12,7 @@
     "lint:fix": "yarn lint --fix"
   },
   "workspaces": [
-    "gatsby-theme-minimal",
+    "gatsby-theme-auth0",
     "example"
   ],
   "devDependencies": {

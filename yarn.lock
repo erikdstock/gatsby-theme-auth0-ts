@@ -1584,7 +1584,7 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-auth0-js@^9.11.2, auth0-js@^9.11.3:
+auth0-js@^9.11.3:
   version "9.11.3"
   resolved "https://registry.yarnpkg.com/auth0-js/-/auth0-js-9.11.3.tgz#a19add9f5c47d155b7a6f87a6dd2b197a9a43860"
   integrity sha512-86EGbaXPHBuyYPPPpvkckH7rCnEgS14DHsK64v2tb4ph4NsZ+peW6pjwBHkOdz4Ytd/ibhGTYCEbA9xdHWSqiA==
@@ -4577,7 +4577,7 @@ gatsby-plugin-page-creator@^2.1.17:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-typescript@^2.1.2, gatsby-plugin-typescript@^2.1.8:
+gatsby-plugin-typescript@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.1.8.tgz#123b77bace28d1cdb67014ed132f715558185a6a"
   integrity sha512-jujlUsaEa1QqpAdJHDEXmAbxdJJXQm2SPqmrc5n9dOR7bRqBmCge9QPb2Mwir6fXcCEv1jLmE0xnbC14B+VtZA==
@@ -4617,14 +4617,6 @@ gatsby-telemetry@^1.1.23:
     stack-trace "^0.0.10"
     stack-utils "1.0.2"
     uuid "3.3.3"
-
-gatsby-theme-auth0@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-auth0/-/gatsby-theme-auth0-1.1.0.tgz#0517f50abb1028b9bda58b10e8d4248d48356c2c"
-  integrity sha512-w1+aZm1GMs4rZP6uYHzuzariXfDsanCMWy7GskmOn8P+LHSsmXg+m15/Q9xArYHmkeBqwkce5cTDhMzySce8rw==
-  dependencies:
-    auth0-js "^9.11.2"
-    gatsby-plugin-typescript "^2.1.2"
 
 gatsby@^2.15.16:
   version "2.15.16"

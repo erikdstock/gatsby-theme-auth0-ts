@@ -10,5 +10,5 @@
     "skipLibCheck": true,
     "esModuleInterop": true
   },
-  "include": ["./gatsby-theme-minimal/src/**/*"]
+  "include": ["./gatsby-theme-auth0/src/**/*"]
 }

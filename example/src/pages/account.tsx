@@ -5,7 +5,7 @@ import {
   AuthenticatedRouteComponent,
   logout,
   PrivateRoute
-} from "gatsby-theme-minimal";
+} from "gatsby-theme-auth0";
 
 const Home: AuthenticatedRouteComponent = ({ user }) => {
   return <p>Hi, {user.profile.nickname ? user.profile.nickname : "friend"}!</p>;
