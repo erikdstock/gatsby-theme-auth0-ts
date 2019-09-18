@@ -11,7 +11,7 @@
 
 TODOS:
 
-- [ ] Update .env.example and warning to include callback url
+- [x] Update .env.example and warning to include callback url
 - [ ] Fix types
 - [ ] Add tests
 - [ ] Update this readme (everything below this line)

@@ -11,9 +11,9 @@ export type HandleUser = (u: User) => void
 
 const auth: WebAuth = isBrowser
   ? new auth0.WebAuth({
-      domain: process.env.AUTH0_DOMAIN as string,
-      clientID: process.env.AUTH0_CLIENTID as string,
-      redirectUri: process.env.AUTH0_CALLBACK,
+      domain: process.env.GATSBY_AUTH0_DOMAIN as string,
+      clientID: process.env.GATSBY_AUTH0_CLIENTID as string,
+      redirectUri: process.env.GATSBY_AUTH0_CALLBACK as string,
       responseType: "token id_token",
       scope: "openid profile email",
     })
