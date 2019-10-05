@@ -1,6 +1,2 @@
-export {
-  AuthenticationProvider,
-  AuthenticationContext,
-} from "./AuthenticationProvider"
 export { PrivateRoute } from "./PrivateRoute"
-// , AuthenticatedRouteComponent
+export { SessionProvider, SessionContext } from "./SessionProvider"

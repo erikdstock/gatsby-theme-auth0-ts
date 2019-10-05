@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { RouteComponentProps } from "@reach/router"
-import { login, isLoggedInUser, LoggedInUser } from "../utils/auth0"
-import { AuthenticationContext } from "./AuthenticationProvider"
+import { SessionContext } from "./SessionProvider"
+import { LoggedInUser } from "../auth/user"
 
 const debug = true
 
@@ -22,12 +22,9 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({
   location,
   ...rest
 }) => {
-  const { user } = useContext(AuthenticationContext)
+  const { user, login } = useContext(SessionContext)
 
-  if (!isLoggedInUser(user)) {
-    login(location ? location.pathname : "/")
-    return <p>Redirecting to login...</p>
-  } else {
+  if (user.isLoggedIn) {
     return debug ? (
       <>
         <Component user={user} location={location} {...rest} />
@@ -36,5 +33,8 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({
     ) : (
       <Component user={user} location={location} {...rest} />
     )
+  } else {
+    login(location ? location.pathname : "/")
+    return <p>Redirecting to login...</p>
   }
 }

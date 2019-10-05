@@ -1,13 +1,13 @@
 import React, { useContext, useEffect } from "react"
 import { navigate } from "gatsby"
-import { AuthenticationContext } from "../components"
+import { SessionContext } from "../components"
 
 const Logout = () => {
-  const { logout } = useContext(AuthenticationContext)
+  const { logout } = useContext(SessionContext)
 
   useEffect(() => {
     logout()
-    navigate("/")
+    // navigate("/")
   })
 
   return <p>Bye Bye</p>

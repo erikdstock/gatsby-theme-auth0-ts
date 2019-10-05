@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Nav } from "../components/nav";
+
 export default () => {
   return (
     <div>
+      <Nav />
       <p>Hello Auth0!</p>
-      <Link to="/account">Go to your account</Link>
     </div>
   );
 };
