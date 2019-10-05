@@ -7,10 +7,10 @@ exports.onPreBootstrap = ({ reporter }, options) => {
     // TODO: auth0RedirectUri be automatic (to authoDomain/auth/callback)?
     // Should other optional parameters be set to defaults?
     reporter.panicOnBuild(`
-        gatsby-theme-auth0-routing requires 'auth0Domain', 'auth0ClientID', and 'auth0RedirectUri' keys.
+        gatsby-theme-auth0-ts-routing requires 'auth0Domain', 'auth0ClientID', and 'auth0RedirectUri' keys.
         If you are loading them from your env you can use this base configuration:
         {
-          resolve: "gatsby-theme-auth0",
+          resolve: "gatsby-theme-auth0-ts",
           options: {
             /* Required */
             auth0Domain: process.env.AUTH0_DOMAIN,

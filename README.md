@@ -7,7 +7,7 @@
   Gatsby Theme - Auth0
 </h1>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/86f1f840-1a9c-4994-be3e-6c9341cf6d9a/deploy-status)](https://app.netlify.com/sites/gatsby-theme-auth0-example/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/86f1f840-1a9c-4994-be3e-6c9341cf6d9a/deploy-status)](https://app.netlify.com/sites/gatsby-theme-auth0-ts-example/deploys)
 
 TODOS:
 
@@ -27,7 +27,7 @@ yarn workspace example develop
 ```shell
 .
 ├── README.md
-├── gatsby-theme-auth0
+├── gatsby-theme-auth0-ts
 │   ├── README.md
 │   ├── gatsby-config.js
 │   ├── index.js
@@ -43,14 +43,14 @@ yarn workspace example develop
 3 directories, 10 files
 ```
 
-### `gatsby-theme-auth0`
+### `gatsby-theme-auth0-ts`
 
 This directory is the theme package itself. You should rename this at
 some point to be `gatsby-theme-{my-theme-name}`. Also change the
 `package.json` name field and the corresponding dependency in the
 example directory's `package.json`/`gatsby-config.js` to match the chosen name.
 
-- `gatsby-theme-auth0/`
+- `gatsby-theme-auth0-ts/`
   - `gatsby-config.js`: An empty gatsby-config that you can use as a starting point for building functionality into your theme.
   - `index.js`: Since themes also function as plugins, this is an empty file that
     gatsby needs to use this theme as a plugin.

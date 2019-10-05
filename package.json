@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-theme-workspace",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -13,7 +13,7 @@
     "lint:fix": "yarn lint --fix"
   },
   "workspaces": [
-    "gatsby-theme-auth0",
+    "gatsby-theme-auth0-ts",
     "example"
   ],
   "devDependencies": {

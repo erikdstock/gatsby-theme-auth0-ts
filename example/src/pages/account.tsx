@@ -1,7 +1,7 @@
 import React from "react";
 import { Router } from "@reach/router";
 import { Link } from "gatsby";
-import { AuthenticatedRouteComponent, PrivateRoute } from "gatsby-theme-auth0";
+import { AuthenticatedRouteComponent, PrivateRoute } from "gatsby-theme-auth0-ts";
 import { Nav } from "../components/nav";
 
 const Home: AuthenticatedRouteComponent = ({ user }) => {

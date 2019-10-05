@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-theme-auth0",
+      resolve: "gatsby-theme-auth0-ts",
       options: {
         /* Required */
         auth0Domain: process.env.AUTH0_DOMAIN,

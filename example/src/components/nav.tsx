@@ -1,5 +1,5 @@
 import React from "react";
-import { SessionContext } from "gatsby-theme-auth0";
+import { SessionContext } from "gatsby-theme-auth0-ts";
 import { Link } from "@reach/router";
 
 export const Nav = () => {
