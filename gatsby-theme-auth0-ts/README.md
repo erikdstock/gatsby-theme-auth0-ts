@@ -6,8 +6,8 @@
 mkdir my-site
 cd my-site
 yarn init
-# install gatsby-theme-auth0 and it's dependencies
-yarn add gatsby react react-dom gatsby-theme-auth0
+# install gatsby-theme-auth0-ts and it's dependencies
+yarn add gatsby react react-dom gatsby-theme-auth0-ts
 ```
 
 Then add the theme to your `gatsby-config.js`. We'll use the long form
@@ -17,7 +17,7 @@ here for education purposes.
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-theme-auth0",
+      resolve: "gatsby-theme-auth0-ts",
       options: {},
     },
   ],

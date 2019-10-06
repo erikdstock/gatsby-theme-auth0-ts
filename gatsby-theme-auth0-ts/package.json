@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-theme-auth0",
+  "name": "gatsby-theme-auth0-ts",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Erik Stockmeier <erik.d.stock@gmail.com> (@erikdstock)",

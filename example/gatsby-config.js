@@ -3,5 +3,19 @@ require("dotenv").config({
 });
 
 module.exports = {
-  plugins: [{ resolve: `gatsby-theme-auth0`, options: {} }]
+  plugins: [
+    {
+      resolve: "gatsby-theme-auth0-ts",
+      options: {
+        /* Required */
+        auth0Domain: process.env.AUTH0_DOMAIN,
+        auth0ClientID: process.env.AUTH0_CLIENT_ID,
+        auth0RedirectUri: process.env.AUTH0_CALLBACK_URL
+        /* Optional */
+        // auth0Audience: "https://{process.env.AUTH0_DOMAIN}/userinfo",
+        // auth0ResponseType: "token id_token",
+        // auth0Scope: "openid profile",
+      }
+    }
+  ]
 };
