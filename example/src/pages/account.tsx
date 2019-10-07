@@ -1,8 +1,10 @@
 import React from "react";
 import { Router } from "@reach/router";
-import { Link } from "gatsby";
-import { AuthenticatedRouteComponent, PrivateRoute } from "gatsby-theme-auth0-ts";
-import { Nav } from "../components/nav";
+import {
+  AuthenticatedRouteComponent,
+  PrivateRoute
+} from "gatsby-theme-auth0-ts";
+import { Layout } from "../components/layout";
 
 const Home: AuthenticatedRouteComponent = ({ user }) => {
   return <p>Hi, {user.profile.nickname ? user.profile.nickname : "friend"}!</p>;
@@ -13,15 +15,13 @@ const Billing: AuthenticatedRouteComponent = () => <p>Billing</p>;
 
 const Account = () => {
   return (
-    <>
-      <Nav />
-
+    <Layout>
       <Router>
         <PrivateRoute component={Home} path="/account" />
         <PrivateRoute component={Settings} path="/account/settings" />
         <PrivateRoute component={Billing} path="/account/billing" />
       </Router>
-    </>
+    </Layout>
   );
 };
 export default Account;
