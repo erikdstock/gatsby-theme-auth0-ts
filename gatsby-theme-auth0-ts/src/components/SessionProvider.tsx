@@ -47,8 +47,11 @@ export const SessionProvider: React.FC<{}> = ({ children }) => {
     setSessionState({ isLoading: false, user })
   }
 
-  const logout = ({ returnTo }: auth0.LogoutOptions = {}) =>
-    auth.logout({ returnTo })
+  const logout = (
+    { returnTo }: auth0.LogoutOptions = {
+      returnTo: location && location.origin,
+    }
+  ) => auth.logout({ returnTo })
 
   const authorize = () => {
     auth.authorize()
