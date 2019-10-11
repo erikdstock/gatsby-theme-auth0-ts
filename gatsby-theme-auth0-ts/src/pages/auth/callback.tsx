@@ -10,7 +10,6 @@ interface Props {
   location: WindowLocation
 }
 
-// TODO: see if we can get this from auth0 login options redirectURI + location bar?
 const postLogin = () => {
   const postLoginUrl = localStorage.getItem("postLoginUrl")
   localStorage.removeItem("postLoginUrl")
@@ -25,10 +24,18 @@ const CallbackPage: React.FunctionComponent<Props> = props => {
   React.useEffect(() => {
     if (/access_token|id_token|error/.test(location.hash)) {
       // TODO: put client inside session context rather than importing?
-      auth0Service.handleAuthentication().then((user: User) => {
-        session.setUser(user)
-        postLogin()
-      })
+      auth0Service
+        .handleAuthentication()
+        .then((user: User) => {
+          session.setUser(user)
+          postLogin()
+        })
+        .catch(error => {
+          // TODO: handle an error like {"error":"invalid_token","errorDescription":"`state` does not match."}
+          // maybe set it on the session?
+          console.warn("auth0 authentication rejected", error)
+          navigate("/")
+        })
     }
   }, [])
 

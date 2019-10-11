@@ -2,7 +2,6 @@ const path = require("path")
 
 exports.onPreBootstrap = ({ reporter }, options) => {
   const { auth0Domain, auth0ClientID, auth0RedirectUri } = options
-  console.log(options)
   if (!(auth0ClientID && auth0Domain && auth0RedirectUri)) {
     // TODO: auth0RedirectUri be automatic (to authoDomain/auth/callback)?
     // Should other optional parameters be set to defaults?
