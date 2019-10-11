@@ -51,9 +51,7 @@ export const Header = () => {
               border: "1px solid black",
               borderRadius: "3px",
             }}
-            onClick={() => {
-              authorize()
-            }}
+            onClick={() => authorize()}
           >
             Log In
           </button>
