@@ -1,17 +1,14 @@
 import React from "react"
 import { Router } from "@reach/router"
-import {
-  PrivateRoute,
-  AuthenticatedRouteComponent,
-} from "gatsby-theme-auth0-ts"
+import { PrivateRoute } from "gatsby-theme-auth0-ts"
 import { Layout } from "../components/layout"
 
-const Home: AuthenticatedRouteComponent = ({ user }) => {
+const Home = ({ user }) => {
   return <p>Hi, {user.profile.nickname ? user.profile.nickname : "friend"}!</p>
 }
 
-const Settings: AuthenticatedRouteComponent = () => <p>Settings</p>
-const Billing: AuthenticatedRouteComponent = () => <p>Billing</p>
+const Settings = () => <p>Settings</p>
+const Billing = () => <p>Billing</p>
 
 const Account = () => {
   return (

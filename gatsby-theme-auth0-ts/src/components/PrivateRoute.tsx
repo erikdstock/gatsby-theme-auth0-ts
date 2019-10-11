@@ -3,7 +3,7 @@ import { RouteComponentProps } from "@reach/router"
 import { SessionContext } from "./SessionProvider"
 import { LoggedInUser } from "../auth/user"
 
-export type AuthenticatedRouteComponent = React.ComponentType<
+export type PrivateRouteComponent = React.ComponentType<
   AuthenticatedProps & RouteComponentProps
 >
 
@@ -12,7 +12,7 @@ export interface AuthenticatedProps {
 }
 
 export interface PrivateRouteProps extends RouteComponentProps {
-  component: AuthenticatedRouteComponent
+  component: PrivateRouteComponent
 }
 
 export const PrivateRoute: React.FC<PrivateRouteProps> = ({
