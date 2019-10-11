@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-theme-workspace",
   "private": true,
-  "version": "1.0.1-4",
+  "version": "1.0.1-5",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
