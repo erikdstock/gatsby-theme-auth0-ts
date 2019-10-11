@@ -1,11 +1,10 @@
-import React from "react";
-import { Nav } from "../components/nav";
+import React from "react"
+import { Layout } from "../components/layout"
 
 export default () => {
   return (
-    <div>
-      <Nav />
-      <p>Hello Auth0!</p>
-    </div>
-  );
-};
+    <Layout>
+      <h2>Home</h2>
+    </Layout>
+  )
+}
