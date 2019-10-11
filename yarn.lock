@@ -4618,6 +4618,15 @@ gatsby-telemetry@^1.1.23:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
+gatsby-theme-auth0-ts@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-auth0-ts/-/gatsby-theme-auth0-ts-1.0.0.tgz#b88f206268425dd0dac6d34e29fd8fcdd163af50"
+  integrity sha512-MEP0piryhn8KlhMpUipDQ96dpPxfBZTWsRLqvTL1uHF8K77mukdrIAfLvAx1/rlMSCur2HvM72BwdxLiic07SQ==
+  dependencies:
+    "@types/auth0-js" "^9.10.6"
+    auth0-js "^9.11.3"
+    gatsby-plugin-typescript "^2.1.8"
+
 gatsby@^2.15.16:
   version "2.15.16"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.16.tgz#b175e30a9dac100239bdc664998b11349fcd1dcd"
