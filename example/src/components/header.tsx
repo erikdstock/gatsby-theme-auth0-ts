@@ -4,7 +4,9 @@ import { Link } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
 export const Header = () => {
-  const { user, authorize, logout } = React.useContext(SessionContext)
+  const session = React.useContext(SessionContext)
+
+  const { user, authorize, logout } = session
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -37,7 +39,7 @@ export const Header = () => {
                 border: "1px solid black",
                 borderRadius: "3px",
               }}
-              onClick={logout}
+              onClick={() => logout()}
             >
               Log Out
             </button>
@@ -49,7 +51,9 @@ export const Header = () => {
               border: "1px solid black",
               borderRadius: "3px",
             }}
-            onClick={authorize}
+            onClick={() => {
+              authorize()
+            }}
           >
             Log In
           </button>

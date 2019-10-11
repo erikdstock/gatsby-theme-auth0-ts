@@ -1,1 +1,2 @@
-export * from "./src/components/PrivateRoute"
+export * from "./src/components"
+export * from "./src/auth"
