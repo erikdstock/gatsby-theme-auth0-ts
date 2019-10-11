@@ -1,6 +1,6 @@
 import React from "react"
 import { User, AnonymousUser } from "../auth/user"
-import { navigate, GatsbyBrowser } from "gatsby"
+import { GatsbyBrowser } from "gatsby"
 import { auth0Service as auth } from "../auth/auth0Service"
 import { isBrowser } from "../utils/environment"
 
@@ -12,8 +12,8 @@ interface SessionState {
 
 export interface Session extends SessionState {
   setUser: (u: User) => void
-  logout: () => void
-  login: () => void
+  logout: (options?: auth0.LogoutOptions) => void
+  authorize: (options?: auth0.LoginOptions) => void
 }
 
 export const SessionContext = React.createContext<Session>({
@@ -21,7 +21,7 @@ export const SessionContext = React.createContext<Session>({
   user: AnonymousUser,
   setUser: () => {},
   logout: () => {},
-  login: () => {},
+  authorize: () => {},
 })
 
 /**
@@ -44,28 +44,32 @@ export const SessionProvider: React.FC<{}> = ({ children }) => {
   })
 
   const setUser = (user: User) => {
-    console.log("setting user")
     setSessionState({ isLoading: false, user })
   }
 
-  const logout = () => {
-    setSessionState({ isLoading: false, user: AnonymousUser })
-    auth.logout()
-    navigate("/")
+  const logout = ({ returnTo }: auth0.LogoutOptions = {}) =>
+    auth.logout({ returnTo })
+
+  const authorize = () => {
+    auth.authorize()
   }
 
-  const login = () => auth.login()
-
   React.useEffect(() => {
-    if (isBrowser) {
-      console.log("about to check session")
-      auth.checkSession().then(setUser)
+    if (isBrowser && auth.isAuthenticated()) {
+      auth.checkSession().then(u => {
+        setUser(u)
+      })
     }
   }, [])
 
   return (
     <SessionContext.Provider
-      value={{ ...sessionState, setUser, logout, login }}
+      value={{
+        ...sessionState,
+        setUser,
+        logout,
+        authorize,
+      }}
     >
       {children}
     </SessionContext.Provider>

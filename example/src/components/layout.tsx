@@ -1,6 +1,6 @@
 import React from "react"
 import { SessionContext } from "gatsby-theme-auth0-ts"
-import { Nav } from "./nav"
+import { Header } from "./header"
 
 export const Layout = ({ children }) => {
   const session = React.useContext(SessionContext)
@@ -14,7 +14,7 @@ export const Layout = ({ children }) => {
         boxSizing: "border-box",
       }}
     >
-      <Nav />
+      <Header />
       <div style={{ flex: "1" }}>{children}</div>
       <div style={{ flex: "0" }}>
         <h3>Current session state</h3>

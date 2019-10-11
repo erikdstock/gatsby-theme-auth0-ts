@@ -20,12 +20,12 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({
   location,
   ...rest
 }) => {
-  const { user, login } = useContext(SessionContext)
+  const { user, authorize } = useContext(SessionContext)
 
   if (user.isLoggedIn) {
     return <Component user={user} location={location} {...rest} />
   } else {
-    login(location ? location.pathname : "/")
+    authorize()
     return <p>Redirecting to login...</p>
   }
 }

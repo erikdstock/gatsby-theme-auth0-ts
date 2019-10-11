@@ -1,17 +1,17 @@
-import React from "react";
-import { Router } from "@reach/router";
+import React from "react"
+import { Router } from "@reach/router"
 import {
+  PrivateRoute,
   AuthenticatedRouteComponent,
-  PrivateRoute
-} from "gatsby-theme-auth0-ts";
-import { Layout } from "../components/layout";
+} from "gatsby-theme-auth0-ts"
+import { Layout } from "../components/layout"
 
 const Home: AuthenticatedRouteComponent = ({ user }) => {
-  return <p>Hi, {user.profile.nickname ? user.profile.nickname : "friend"}!</p>;
-};
+  return <p>Hi, {user.profile.nickname ? user.profile.nickname : "friend"}!</p>
+}
 
-const Settings: AuthenticatedRouteComponent = () => <p>Settings</p>;
-const Billing: AuthenticatedRouteComponent = () => <p>Billing</p>;
+const Settings: AuthenticatedRouteComponent = () => <p>Settings</p>
+const Billing: AuthenticatedRouteComponent = () => <p>Billing</p>
 
 const Account = () => {
   return (
@@ -22,6 +22,6 @@ const Account = () => {
         <PrivateRoute component={Billing} path="/account/billing" />
       </Router>
     </Layout>
-  );
-};
-export default Account;
+  )
+}
+export default Account

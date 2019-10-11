@@ -10,5 +10,8 @@
     "skipLibCheck": true,
     "esModuleInterop": true
   },
-  "include": ["./gatsby-theme-auth0-ts/src/**/*"]
+  "include": [
+    "./gatsby-theme-auth0-ts/src/**/*",
+    "example/src/pages/logout.tsx"
+  ]
 }

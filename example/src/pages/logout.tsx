@@ -1,13 +1,11 @@
 import React, { useContext, useEffect } from "react"
-import { navigate } from "gatsby"
-import { SessionContext } from "../components"
+import { SessionContext } from "../../../gatsby-theme-auth0-ts/src/components"
 
 const Logout = () => {
   const { logout } = useContext(SessionContext)
 
   useEffect(() => {
     logout()
-    // navigate("/")
   })
 
   return <p>Bye Bye</p>

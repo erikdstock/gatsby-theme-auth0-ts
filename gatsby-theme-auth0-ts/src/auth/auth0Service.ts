@@ -92,24 +92,20 @@ export class Auth0Service {
    * TODO: consider whether this can be handled via the callback route (eg auth0 returnTo param)
    *   and whether `window.location.pathname` will work correctly for urls with a hash or query string
    */
-  public login = (options: auth0.AuthorizeOptions = {}) => {
+  public authorize = (options: auth0.AuthorizeOptions = {}) => {
     if (!isBrowser) return
     // Save postLoginUrl so we can redirect user back to where they left off after login screen
     localStorage.setItem("postLoginUrl", window.location.pathname) // TODO: use auth options?
-    console.log("login", options)
     this.auth0 && this.auth0.authorize(options)
   }
 
   /**
    * Log out, both locally and on auth0. Redirects to home.
    */
-  public logout = () => {
+  public logout = (options: auth0.LogoutOptions = {}) => {
     if (!isBrowser) return
     this.localLogout()
-    this.auth0 &&
-      this.auth0.logout({
-        returnTo: window.location.origin,
-      })
+    this.auth0 && this.auth0.logout(options)
   }
 
   /**
