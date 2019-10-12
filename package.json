@@ -11,6 +11,7 @@
     "debug": "yarn workspace example debug",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "test": "echo 'write tests'",
     "lint:fix": "yarn lint --fix"
   },
   "workspaces": [
