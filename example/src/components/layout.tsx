@@ -2,7 +2,7 @@ import React from "react"
 import { SessionContext } from "gatsby-theme-auth0-ts"
 import { Header } from "./header"
 
-export const Layout = ({ children }) => {
+export const Layout: React.FC = ({ children }) => {
   const session = React.useContext(SessionContext)
   return (
     <div

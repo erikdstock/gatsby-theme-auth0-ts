@@ -11,7 +11,16 @@
     "esModuleInterop": true
   },
   "include": [
+    "**/gatsby-node.js",
+    "**/gatsby-config.js",
+    "**/gatsby-browser.js",
+    "**/gatsby-ssr.js",
     "./gatsby-theme-auth0-ts/src/**/*",
-    "example/src/pages/logout.tsx"
+    "gatsby-theme-auth0-ts/typings/index.d.ts",
+    // "./gatsby-theme-auth0-ts/index.ts",
+    // "./gatsby-theme-auth0-ts/typings",
+    "example/src/**/*.tsx",
+    "example/src/**/*.ts",
+    "example/src/**/*.js"
   ]
 }
