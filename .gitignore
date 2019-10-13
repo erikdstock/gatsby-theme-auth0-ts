@@ -3,3 +3,5 @@ public
 node_modules
 example/.env.development
 example/.env.production
+cypress/videos
+cypress/screenshots

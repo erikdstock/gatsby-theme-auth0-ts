@@ -1,9 +1,9 @@
 import React from "react"
 import { Router } from "@reach/router"
-import { PrivateRoute } from "gatsby-theme-auth0-ts"
+import { PrivateRoute, PrivateRouteComponent } from "gatsby-theme-auth0-ts"
 import { Layout } from "../components/layout"
 
-const Home = ({ user }) => {
+const Home: PrivateRouteComponent = ({ user }) => {
   return <p>Hi, {user.profile.nickname ? user.profile.nickname : "friend"}!</p>
 }
 
