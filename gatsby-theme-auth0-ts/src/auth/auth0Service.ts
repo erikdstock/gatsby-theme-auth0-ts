@@ -103,11 +103,11 @@ export class Auth0Service {
   /**
    * Log out, both locally and on auth0. Redirects to home.
    */
-  public logout = (options?: auth0.LogoutOptions) => {
+  public logout = (options: auth0.LogoutOptions = {}) => {
     if (!isBrowser) return
     this.localLogout()
     this.client &&
-      this.client.logout(options || { returnTo: window.location.origin })
+      this.client.logout({ returnTo: window.location.origin, ...options })
   }
 
   /**

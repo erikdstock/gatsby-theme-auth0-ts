@@ -1,7 +1,7 @@
 import React from "react"
 import { User, AnonymousUser } from "../auth/user"
 import { GatsbyBrowser } from "gatsby"
-import { singleton as auth, Auth0Service } from "../auth/auth0Service"
+import { singleton as auth } from "../auth/auth0Service"
 import { isBrowser } from "../utils/environment"
 
 // TODO: consider combining
@@ -12,14 +12,20 @@ interface SessionState {
 
 export interface Session extends SessionState {
   setUser: (u: User) => void
-  auth: Auth0Service
+  auth: {
+    authorize: (options?: auth0.AuthorizeOptions) => void
+    logout: (options?: auth0.LogoutOptions) => void
+  }
 }
 
 export const SessionContext = React.createContext<Session>({
   isLoading: true,
   user: AnonymousUser,
   setUser: () => {},
-  auth: auth,
+  auth: {
+    authorize: () => {},
+    logout: () => {},
+  },
 })
 
 /**
@@ -58,7 +64,10 @@ export const SessionProvider: React.FC<{}> = ({ children }) => {
       value={{
         ...sessionState,
         setUser,
-        auth,
+        auth: {
+          authorize: auth.authorize,
+          logout: auth.logout,
+        },
       }}
     >
       {children}

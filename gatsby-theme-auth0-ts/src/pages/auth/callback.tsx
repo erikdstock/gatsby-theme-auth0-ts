@@ -5,6 +5,7 @@ import { SessionContext } from "../../components/SessionProvider"
 import { navigate } from "gatsby"
 import { User } from "../../auth/user"
 import { Auth0Error } from "auth0-js"
+import { singleton as auth } from "../../auth/auth0Service"
 
 interface Props {
   location: WindowLocation
@@ -23,7 +24,7 @@ const CallbackPage: React.FunctionComponent<Props> = props => {
 
   React.useEffect(() => {
     if (/access_token|id_token|error/.test(location.hash)) {
-      session.auth
+      auth
         .handleAuthentication()
         .then((user: User) => {
           session.setUser(user)
