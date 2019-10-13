@@ -20,7 +20,10 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({
   location,
   ...rest
 }) => {
-  const { user, authorize } = useContext(SessionContext)
+  const {
+    user,
+    auth: { authorize },
+  } = useContext(SessionContext)
 
   if (user.isLoggedIn) {
     return <Component user={user} location={location} {...rest} />

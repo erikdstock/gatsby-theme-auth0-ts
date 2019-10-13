@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby + Auth0",
+    title: "Gatsby + Auth0 + Ts",
   },
   plugins: [
     {

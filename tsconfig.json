@@ -8,10 +8,26 @@
     "strict": true,
     "noEmit": true, // Don't create files when running tsc
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["@types/testing-library__cypress", "node", "jest"]
   },
   "include": [
-    "./gatsby-theme-auth0-ts/src/**/*",
-    "example/src/pages/logout.tsx"
-  ]
+    "gatsby-theme-auth0-ts/index.d.ts",
+    "gatsby-theme-auth0-ts/index.js",
+    "gatsby-theme-auth0-ts/src/**/*.tsx",
+    "**/gatsby-node.js",
+    "**/gatsby-config.js",
+    "**/gatsby-browser.js",
+    "**/gatsby-ssr.js",
+    "example/src/**/*.tsx",
+    "example/src/**/*.ts",
+    "example/src/**/*.js",
+    "cypress/**/*.js",
+    "__jest__/**/*.ts",
+    "./jest.config.js",
+    "**/*.test.tsx",
+    "__jest__/jest-setup.js",
+    "__mocks__/*.js"
+  ],
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }

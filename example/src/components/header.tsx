@@ -6,7 +6,10 @@ import { useStaticQuery, graphql } from "gatsby"
 export const Header = () => {
   const session = React.useContext(SessionContext)
 
-  const { user, authorize, logout } = session
+  const {
+    user,
+    auth: { authorize, logout },
+  } = session
   const data = useStaticQuery(graphql`
     query {
       site {

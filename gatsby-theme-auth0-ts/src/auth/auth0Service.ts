@@ -4,7 +4,7 @@ import { AnonymousUser, User, LoggedInUser, AuthTokens } from "./user"
 import { isBrowser } from "../utils/environment"
 
 export class Auth0Service {
-  private auth0: auth0.WebAuth | undefined =
+  private client: auth0.WebAuth | undefined =
     process.env.AUTH0_DOMAIN && isBrowser
       ? new auth0.WebAuth(config)
       : undefined
@@ -16,8 +16,8 @@ export class Auth0Service {
    */
   public handleAuthentication = (): Promise<User> => {
     return new Promise((resolve, reject) => {
-      this.auth0
-        ? this.auth0.parseHash((err, authResult) => {
+      this.client
+        ? this.client.parseHash((err, authResult) => {
             if (authResult && authResult.accessToken && authResult.idToken) {
               const user = this.userFromAuthResult(authResult)
               return resolve(user)
@@ -36,8 +36,8 @@ export class Auth0Service {
    */
   public checkSession = (): Promise<User> => {
     return new Promise((resolve, reject) => {
-      this.auth0 && this.isAuthenticated()
-        ? this.auth0.checkSession({}, (err, authResult) => {
+      this.client && this.isAuthenticated()
+        ? this.client.checkSession({}, (err, authResult) => {
             if (err) reject(err)
             if (authResult && authResult.accessToken && authResult.idToken) {
               const user = this.userFromAuthResult(authResult)
@@ -96,16 +96,18 @@ export class Auth0Service {
     if (!isBrowser) return
     // Save postLoginUrl so we can redirect user back to where they left off after login screen
     localStorage.setItem("postLoginUrl", window.location.pathname) // TODO: use auth options?
-    this.auth0 && this.auth0.authorize(options)
+
+    this.client && this.client.authorize(options)
   }
 
   /**
    * Log out, both locally and on auth0. Redirects to home.
    */
-  public logout = (options: auth0.LogoutOptions) => {
+  public logout = (options: auth0.LogoutOptions = {}) => {
     if (!isBrowser) return
     this.localLogout()
-    this.auth0 && this.auth0.logout(options)
+    this.client &&
+      this.client.logout({ returnTo: window.location.origin, ...options })
   }
 
   /**
@@ -126,4 +128,4 @@ export class Auth0Service {
   }
 }
 
-export const auth0Service = new Auth0Service()
+export const singleton = new Auth0Service()

@@ -1,10 +1,11 @@
 import * as React from "react"
 import { WindowLocation } from "@reach/router"
-import { auth0Service } from "../../auth/auth0Service"
 import { Loading } from "../../components/Loading"
 import { SessionContext } from "../../components/SessionProvider"
 import { navigate } from "gatsby"
 import { User } from "../../auth/user"
+import { Auth0Error } from "auth0-js"
+import { singleton as auth } from "../../auth/auth0Service"
 
 interface Props {
   location: WindowLocation
@@ -23,14 +24,13 @@ const CallbackPage: React.FunctionComponent<Props> = props => {
 
   React.useEffect(() => {
     if (/access_token|id_token|error/.test(location.hash)) {
-      // TODO: put client inside session context rather than importing?
-      auth0Service
+      auth
         .handleAuthentication()
         .then((user: User) => {
           session.setUser(user)
           postLogin()
         })
-        .catch(error => {
+        .catch((error: Auth0Error) => {
           // TODO: handle an error like {"error":"invalid_token","errorDescription":"`state` does not match."}
           // maybe set it on the session?
           console.warn("auth0 authentication rejected", error)

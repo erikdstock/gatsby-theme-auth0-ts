@@ -1,32 +1,33 @@
-const path = require("path");
+const path = require("path")
 
 module.exports = {
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint", "graphql"],
+  plugins: ["@typescript-eslint", "graphql", "jest"],
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "prettier",
   ],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 6,
     project: "./tsconfig.json",
-    sourceType: "module"
+    sourceType: "module",
   },
   settings: {
     react: {
-      version: "detect"
-    }
+      version: "detect",
+    },
   },
   env: {
     es6: true,
     browser: true,
     jest: true,
-    node: true
+    node: true,
+    "jest/globals": true,
   },
   rules: {
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -39,16 +40,16 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        argsIgnorePattern: "^_"
-      }
+        argsIgnorePattern: "^_",
+      },
     ],
     "no-console": [
       "error",
       {
-        allow: ["warn", "error"]
-      }
+        allow: ["warn", "error"],
+      },
     ],
     "react/display-name": 0,
-    "react/prop-types": 0
-  }
-};
+    "react/prop-types": 0,
+  },
+}

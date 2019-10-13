@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-theme-workspace",
   "private": true,
-  "version": "1.0.1-6",
+  "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -11,27 +11,58 @@
     "debug": "yarn workspace example debug",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "test": "jest",
+    "cy:open": "cypress open",
     "lint:fix": "yarn lint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx|ts|tsx)": [
+      "yarn lint"
+    ],
+    "*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)": [
+      "yarn prettier --write",
+      "git add"
+    ]
   },
   "workspaces": [
     "gatsby-theme-auth0-ts",
     "example"
   ],
   "devDependencies": {
+    "@testing-library/cypress": "^5.0.2",
+    "@types/enzyme": "^3.10.3",
+    "@types/jest": "^24.0.18",
     "@types/node": "^12.7.5",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@typescript-eslint/eslint-plugin": "^2.3.0",
     "@typescript-eslint/parser": "^2.3.0",
+    "babel-jest": "^24.9.0",
+    "babel-preset-gatsby": "^0.2.18",
+    "cypress": "^3.4.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^6.4.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-cypress": "^2.7.0",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.19.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^2.0.1",
+    "husky": "^3.0.8",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.4.2",
     "prettier": "^1.18.2",
+    "react-testing-library": "^8.0.1",
+    "ts-jest": "^24.1.0",
     "typescript": "^3.6.3"
   }
 }

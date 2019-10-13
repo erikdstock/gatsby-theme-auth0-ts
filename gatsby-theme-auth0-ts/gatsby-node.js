@@ -1,5 +1,3 @@
-const path = require("path")
-
 exports.onPreBootstrap = ({ reporter }, options) => {
   const { auth0Domain, auth0ClientID, auth0RedirectUri } = options
   if (!(auth0ClientID && auth0Domain && auth0RedirectUri)) {
