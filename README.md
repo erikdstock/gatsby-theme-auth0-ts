@@ -1,10 +1,8 @@
 <div style="padding:20px;font-size:120px;color:#5190c9" align="center">
   <a style='font-size:120px' href="https://www.gatsbyjs.org">
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" height="80" /></img></a>
-    +
   <a style='font-size:120px' href="https://www.auth0.com">
     <img height="75"  alt="auth0" src="./example/src/images/auth0-logo-whitebg.png" /></img></a>
-    +
   <a style='font-size:120px' href="https://www.typescriptlang.org">
     <img height="75"  alt="auth0" src="./example/src/images/ts.png" /></img>
   </a>
@@ -22,6 +20,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/86f1f840-1a9c-4994-be3e-6c9341cf6d9a/deploy-status)](https://app.netlify.com/sites/gatsby-theme-auth0-ts-example/deploys)  
 _See example site deployed at [gatsby-theme-auth0-ts-example.netlify.com](https://gatsby-theme-auth0-ts-example.netlify.com)._
+
+_[Jump to comparison with `gatsby-theme-auth0`](#comparison-with-gatsby-theme-auth0)_
 
 ### Features
 
@@ -95,6 +95,55 @@ module.exports = {
 - Programatically create authenticated-only pages: see [gatsby-node](./example/gatsby-node.js) and the [account page](./example/src/pages/account.tsx). `<PrivateRoute component={MyRoute} />` accepts a [`@reach/router` RouteComponent](https://reach.tech/router/api/RouteComponent) which will receive and additional `user` prop (or redirect to the authentication flow if the user is not logged in). `@reach/router` is used by Gatsby's routing layer so ready to go.
 - Access the user + session state directly via the React context api: see the [Header](./example/src/components/header.tsx) component.
 
+### Usage
+
+#### `User` _[(source)](src/auth/user.ts)_
+
+A `User` object can be either a `LoggedInUser` or a `LoggedOutUser`.
+
+#### `<PrivateRoute />` _[(source)](src/components/PrivateRoute.tsx)_
+
+The `PrivateRoute` [source](src/components/PrivateRoute.tsx) component is intended to be used within the context of `@reach/router`. It wraps the internal `component` prop and passes in a `user` (`LoggedInUser`) prop as well. If the user is not logged in `PrivateRoute` will redirect them to the authentication flow.
+
+```tsx
+import { PrivateRoute, PrivateRouteComponent } from "gatsby-theme-auth0-ts"
+
+const Home: PrivateRouteComponent = ({ user }) => {
+  return <p>Hi, {user.profile.nickname ? user.profile.nickname : "friend"}!</p>
+}
+
+const Account = () => {
+  return (
+    <Layout>
+      <Router>
+        <PrivateRoute component={Home} path="/account" />
+        {/* ET CETERA */}
+        <PrivateRoute component={Settings} path="/account/settings" />
+      </Router>
+    </Layout>
+  )
+}
+```
+
+#### `SessionContext` [(source)](src/components/SessionProvider.tsx)
+
+The `SessionContext` is a React Context which provides a `Session` object containing (in particular) a `user` and an `auth` object with helpers for triggering the login and logout flows:
+
+```tsx
+import { SessionContext } from "gatsby-theme-auth0-ts"
+
+const LoginOrOut = () => {
+  const session = React.useContext(SessionContext)
+  const { auth } = session
+
+  return user.isLoggedIn ? (
+    <button onClick={() => auth.logout()}>Log Out</button>
+  ) : (
+    <button onClick={() => auth.authorize()}>Log In</button>
+  )
+}
+```
+
 ### Contributing
 
 Issues and Pull requests accepted. Contributors must abide by the [Contributor Covenant CoC](./code-of-conduct.md).
@@ -103,7 +152,14 @@ Issues and Pull requests accepted. Contributors must abide by the [Contributor C
 
 @erikdstock
 
+### Comparison with `gatsby-theme-auth0`
+
+[epilande/gatsby-theme-auth0](https://github.com/epilande/gatsby-theme-auth0) is another approach to combining gatsby and auth0 developed independently of this package. Both provide typescript support and use a similar auth0 configuration. They differ in that:
+
+- This package uses the `<PrivateRoute />` component as the _primary method_ of triggering the authentication flow.
+- This package exposes session information via the `SessionContext` (i.e. `React.useContext(SessionContext)`)
+- `epilande/gatsby-theme-auth0` handles authentication primarily via a custom react hook.
+
 ### Credits/See Also:
 
-- [epilande/gatsby-theme-auth0](https://github.com/epilande/gatsby-theme-auth0) is another approach to combining gatsby and auth0. It also includes typescript support, but does not expose routing or provider components (i.e. the `SessionContext` or `<PrivateRoute />`)
 - [Securing Gatsby with Auth0](https://auth0.com/blog/securing-gatsby-with-auth0/) and [this youtube video featuring @kukicado and @jlengstorf](https://www.youtube.com/watch?v=j-vuF2PYHmU) inspired this theme's initial structure.

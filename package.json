@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-theme-workspace",
+  "name": "gatsby-theme-auth0-ts-workspace",
   "private": true,
-  "version": "1.0.3",
+  "version": "1.0.6",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -64,5 +64,8 @@
     "react-testing-library": "^8.0.1",
     "ts-jest": "^24.1.0",
     "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0-0"
   }
 }
