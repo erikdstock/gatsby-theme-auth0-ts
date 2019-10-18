@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-theme-workspace",
+  "name": "gatsby-theme-auth0-ts-workspace",
   "private": true,
   "version": "1.0.3",
   "main": "index.js",
