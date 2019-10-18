@@ -1,12 +1,13 @@
 {
   "name": "gatsby-theme-auth0-ts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "author": "Erik Stockmeier <erik.d.stock@gmail.com> (@erikdstock)",
   "license": "MIT",
   "keywords": [
     "gatsby",
     "gatsby-theme",
+    "gatsby-plugin",
     "auth0",
     "typescript"
   ],
