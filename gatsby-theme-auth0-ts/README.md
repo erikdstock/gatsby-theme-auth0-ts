@@ -2,9 +2,9 @@
   <a style='font-size:120px' href="https://www.gatsbyjs.org">
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" height="80" /></img></a>
   <a style='font-size:120px' href="https://www.auth0.com">
-    <img height="75"  alt="auth0" src="./example/src/images/auth0-logo-whitebg.png" /></img></a>
+    <img height="75"  alt="auth0" src="../example/src/images/auth0-logo-whitebg.png" /></img></a>
   <a style='font-size:120px' href="https://www.typescriptlang.org">
-    <img height="75"  alt="auth0" src="./example/src/images/ts.png" /></img>
+    <img height="75"  alt="auth0" src="../example/src/images/ts.png" /></img>
   </a>
 </div>
 <h1 align="center">
