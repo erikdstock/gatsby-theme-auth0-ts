@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-auth0-ts",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "index.js",
   "types": "index.d.ts",
   "author": "Erik Stockmeier <erik.d.stock@gmail.com> (@erikdstock)",
