@@ -13,12 +13,12 @@
 ![NPM](https://img.shields.io/npm/l/gatsby-theme-auth0-ts)
 ![npm](https://img.shields.io/npm/v/gatsby-theme-auth0-ts)
 ![CircleCI](https://img.shields.io/circleci/build/github/erikdstock/gatsby-theme-auth0-ts/master)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/86f1f840-1a9c-4994-be3e-6c9341cf6d9a/deploy-status)](https://app.netlify.com/sites/gatsby-theme-auth0-ts-example/deploys)
 
 </h1>
 
-## _Gatsby authentication solution._
+_Gatsby authentication theme with Auth0, Session Context, first-class routing support and full typescript support._
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/86f1f840-1a9c-4994-be3e-6c9341cf6d9a/deploy-status)](https://app.netlify.com/sites/gatsby-theme-auth0-ts-example/deploys)  
 _See example site deployed at [gatsby-theme-auth0-ts-example.netlify.com](https://gatsby-theme-auth0-ts-example.netlify.com)._
 
 _[Jump to comparison with `gatsby-theme-auth0`](#comparison-with-gatsby-theme-auth0)_

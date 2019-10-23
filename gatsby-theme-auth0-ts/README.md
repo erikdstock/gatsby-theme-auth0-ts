@@ -1,24 +1,15 @@
-<div style="padding:20px;font-size:120px;color:#5190c9" align="center">
-  <a style='font-size:120px' href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" height="80" /></img></a>
-  <a style='font-size:120px' href="https://www.auth0.com">
-    <img height="75"  alt="auth0" src="../example/src/images/auth0-logo-whitebg.png" /></img></a>
-  <a style='font-size:120px' href="https://www.typescriptlang.org">
-    <img height="75"  alt="auth0" src="../example/src/images/ts.png" /></img>
-  </a>
-</div>
 <h1 align="center">
   gatsby-theme-auth0-ts
 
 ![NPM](https://img.shields.io/npm/l/gatsby-theme-auth0-ts)
 ![npm](https://img.shields.io/npm/v/gatsby-theme-auth0-ts)
 ![CircleCI](https://img.shields.io/circleci/build/github/erikdstock/gatsby-theme-auth0-ts/master)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/86f1f840-1a9c-4994-be3e-6c9341cf6d9a/deploy-status)](https://app.netlify.com/sites/gatsby-theme-auth0-ts-example/deploys)
 
 </h1>
 
-## _Gatsby authentication solution._
+_Gatsby authentication theme with Auth0, Session Context, first-class routing and full typescript support._
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/86f1f840-1a9c-4994-be3e-6c9341cf6d9a/deploy-status)](https://app.netlify.com/sites/gatsby-theme-auth0-ts-example/deploys)  
 _See example site deployed at [gatsby-theme-auth0-ts-example.netlify.com](https://gatsby-theme-auth0-ts-example.netlify.com)._
 
 _[Jump to comparison with `gatsby-theme-auth0`](#comparison-with-gatsby-theme-auth0)_
