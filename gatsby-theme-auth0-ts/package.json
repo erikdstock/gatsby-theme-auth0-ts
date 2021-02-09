@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@types/auth0-js": "^9.10.6",
-    "auth0-js": "^9.11.3",
+    "auth0-js": "^9.13.2",
     "gatsby-plugin-typescript": "^2.1.8"
   }
 }
